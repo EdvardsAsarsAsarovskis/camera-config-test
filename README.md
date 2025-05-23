@@ -9,7 +9,7 @@
 
 ## Izmantošanas vide
 - **OS:** Windows 10
-- **IDE:** Visual Studio 2019 / 2022
+- **IDE:** Visual Studio 2022
 - **SDK:** Vimba C SDK
 - **Kamera:** Allied Vision Alvium G5-508C
 
