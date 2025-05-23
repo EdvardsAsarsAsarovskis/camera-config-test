@@ -1,7 +1,7 @@
 ﻿#include <VmbC/VmbC.h> 
 #include <iostream>
-#include <thread>    // std::this_thread::sleep_for
-#include <chrono>    // std::chrono::seconds
+#include <thread>
+#include <chrono>
 
 int main() {
     // 1) Start Vimba
@@ -33,16 +33,14 @@ int main() {
     }
 
 
-    // ————————————————
+
     // Trigger + Acquisition settings
-    // ————————————————
-    /* Trigger + Acquisition settings */
-    VmbFeatureEnumSet(cameraHandle, "TriggerSelector", "FrameStart");  // ← PIEVIENO
-    VmbFeatureEnumSet(cameraHandle, "TriggerMode", "On");          // 
+    VmbFeatureEnumSet(cameraHandle, "TriggerSelector", "FrameStart");
+    VmbFeatureEnumSet(cameraHandle, "TriggerMode", "On");
     VmbFeatureEnumSet(cameraHandle, "TriggerSource", "Software");
     VmbFeatureEnumSet(cameraHandle, "TriggerActivation", "RisingEdge");
 
-    /* SingleFrame, kā prasīji */
+   
     VmbFeatureEnumSet(cameraHandle, "Acquisition Mode", "SingleFrame");
 
 
@@ -59,7 +57,7 @@ int main() {
     VmbFeatureFloatSet(cameraHandle, "ExposureTime", 900000.0);
     VmbFeatureFloatSet(cameraHandle, "Gain", 10.0);
     VmbFeatureEnumSet(cameraHandle, "BalanceWhiteAuto", "Off");
-    VmbFeatureEnumSet(cameraHandle, "Balanc", "Red");
+    VmbFeatureEnumSet(cameraHandle, "BalanceRatioSelector", "Red");
     VmbFeatureFloatSet(cameraHandle, "BalanceRatio", 2.9);
     VmbFeatureEnumSet(cameraHandle, "BalanceRatioSelector", "Blue");
     VmbFeatureFloatSet(cameraHandle, "BalanceRatio", 2.4);
@@ -71,7 +69,7 @@ int main() {
     }
 
     // ————————————————
-    // Trigger loop: 5 frames, 2 seconds apart
+    // Trigger loop: 5 frames
     // ————————————————
     for (int i = 0; i < 2; ++i) { 
         std::cout << "Triggering frame #" << (i + 1) << std::endl;
