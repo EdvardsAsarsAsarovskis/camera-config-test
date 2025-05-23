@@ -54,3 +54,6 @@ opencv_world4100d.lib
 
 ![Blokshēma](Ekrānuzņēmums%202025-05-23%20061521.png)
 
+## Piezīme par ROS
+
+Šajā koda eksperimenta posmā ROS nav izmantots – konfigurācija un testēšana tika veikta lokāli uz Windows 10, izmantojot Allied Vision Vimba C SDK ar Visual Studio 2022. 
