@@ -14,13 +14,27 @@
 - **Kamera:** Allied Vision Alvium G5-508C
 
 ## Kompilēšana (Visual Studio)
-1. Izveido jaunu **Console App** projektu (C++)
-2. Pievieno Vimba C SDK include un lib ceļus:
-   - Include path: `C:\Program Files\Allied Vision\Vimba X\VmbC\Include`
-   - Library path: `...\VmbC\Lib\x64`
-3. Pievieno linkerim biblioteku: `VmbC.lib`
-4. Iekopē kodu `confcam.cpp`
-5. Build un palaid
+1. Izveidot jaunu projektu:
+   - **Console App (C++)**
+
+2. Pievienot include ceļus (`C/C++ → General → Additional Include Directories`):
+C:\Program Files\Allied Vision\Vimba X\api\include
+C:\Program Files\Allied Vision\Vimba X\api\include\VmbImageTransform
+C:\Users\Edvards\Documents\confcam\opencv\build\include
+
+3. Pievienot bibliotēku ceļus (`Linker → General → Additional Library Directories`):
+C:\Program Files\Allied Vision\Vimba X\api\lib
+C:\Users\Edvards\Documents\confcam\opencv\build\x64\vc16\lib
+
+4. Norādit nepieciešamās bibliotēkas (`Linker → Input → Additional Dependencies`):
+VmbC.lib
+VmbImageTransform.lib
+opencv_world4100.lib
+opencv_world4100d.lib
+
+5. Pievienot `confcam.cpp` failu projektā (vai aizvietot `main.cpp`).
+6. Build un palaid programmu.
+
 
 ## Galvenie iestatījumi kodā
 - `ExposureTime = 900000.0` (900 ms)
