@@ -37,4 +37,5 @@
 4. Iestata trigger un LED sinhronizāciju (Line2 GPIO)
 5. Ar programmatūras trigeri uzņem kadrus ar 15 sek. intervālu
 6. Beidz uzņemšanu un aizver kameru
+![Blokshēma](Ekrānuzņēmums%202025-05-23%20061521.png)
 
